@@ -23,3 +23,9 @@ export async function toggleTodo(id: string, checked: boolean) {
     },
   });
 }
+
+export async function deleteTodo(id: string) {
+  await prisma.todo.delete({
+    where: { id },
+  });
+}

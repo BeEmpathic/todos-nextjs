@@ -1,6 +1,6 @@
 import React from "react";
-import { TiDeleteOutline } from "react-icons/ti";
-import { TodoCheckbox } from "./TodoActions";
+
+import { TodoCheckbox, TodoDeleteBtn } from "./TodoActions";
 
 type TodoProps = {
   id: string;
@@ -10,12 +10,10 @@ type TodoProps = {
 
 export default function Todo({ id, title, checked }: TodoProps) {
   return (
-    <li>
+    <li className="flex">
       <h3>{title}</h3>
       <TodoCheckbox id={id} checked={checked} />
-      <button>
-        <TiDeleteOutline />
-      </button>
+      <TodoDeleteBtn id={id} />
     </li>
   );
 }
