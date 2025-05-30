@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/db/db";
+import { revalidatePath } from "next/cache";
 
 export async function createTodo(formData: FormData) {
   const title = formData.get("title") as string;
@@ -10,4 +11,6 @@ export async function createTodo(formData: FormData) {
       title,
     },
   });
+
+  revalidatePath("/");
 }
