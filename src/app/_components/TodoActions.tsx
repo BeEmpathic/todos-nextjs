@@ -16,7 +16,7 @@ export function TodoCheckbox({
     <input
       type="checkbox"
       disabled={isPending}
-      onChange={async () => {
+      onChange={() => {
         startTransition(async () => {
           await toggleTodo(id, !checked);
           router.refresh();
