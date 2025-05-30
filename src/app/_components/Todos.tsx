@@ -1,5 +1,6 @@
 import React from "react";
 import prisma from "@/db/db";
+import Todo from "./Todo";
 
 export default async function Todos() {
   const todos = await prisma.todo.findMany();
@@ -7,7 +8,12 @@ export default async function Todos() {
   return (
     <ul>
       {todos.map((todo) => (
-        <li key={todo.id}>{todo.title}</li>
+        <Todo
+          key={todo.id}
+          id={todo.id}
+          title={todo.title}
+          checked={todo.checked}
+        />
       ))}
     </ul>
   );

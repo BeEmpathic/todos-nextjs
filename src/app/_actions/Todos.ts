@@ -14,3 +14,12 @@ export async function createTodo(formData: FormData) {
 
   revalidatePath("/");
 }
+
+export async function toggleTodo(id: string, checked: boolean) {
+  await prisma.todo.update({
+    where: { id },
+    data: {
+      checked,
+    },
+  });
+}
