@@ -1,18 +1,23 @@
-import Form from "next/form";
+"use client";
+
 import { createTodo } from "../_actions/Todos";
+import { useActionState } from "react";
 
 function TodosForm() {
+  const [error, action] = useActionState(createTodo, {});
+
   return (
     <div>
-      <Form
-        className="flex gap-2 items-center align-center"
-        action={createTodo}
-      >
+      <form className="flex gap-2 items-center align-center" action={action}>
         <input className="text-black" type="text" id="title" name="title" />
-        <button className="border rounded-md p-2" type="submit">
+        <button
+          className="border rounded-md p-2 hover:bg-white hover:text-black transition-colors"
+          type="submit"
+        >
           Add Todo
         </button>
-      </Form>
+      </form>
+      {error?.title && <div className="text-red-500">{error.title}</div>}
     </div>
   );
 }

@@ -2,13 +2,27 @@
 
 import prisma from "@/db/db";
 import { revalidatePath } from "next/cache";
+import { z } from "zod";
 
-export async function createTodo(formData: FormData) {
-  const title = formData.get("title") as string;
+const addTodoSchema = z.object({
+  title: z.string().min(1),
+});
+
+export async function createTodo(prevState: unknown, formData: FormData) {
+  const result = addTodoSchema.safeParse(
+    Object.fromEntries(formData.entries())
+  );
+
+  if (result.success === false) {
+    console.error(result.error);
+    return result.error.formErrors.fieldErrors;
+  }
+
+  const data = result.data;
 
   await prisma.todo.create({
     data: {
-      title,
+      title: data.title,
     },
   });
 

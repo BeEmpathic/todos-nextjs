@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Todos witj next.sj",
-  description: "Learning next.js",
+  title: "Todos with next.js and zod",
+  description: "Learning next.js and zod",
 };
 
 export default function RootLayout({
