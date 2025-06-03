@@ -5,7 +5,7 @@ import Todos from "./_components/Todos";
 
 export default async function Home() {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <TodosForm />
       <Todos />
     </div>
