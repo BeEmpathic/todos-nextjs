@@ -5,11 +5,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-\- To run the app on your computer you have to download the repository.
-\- Unpack it
-\- Open terminal / powershell inside repository's directory
-\- in terminal run: npm insall 
-\- then start the server:
+- To run the app on your computer you have to download the repository.
+- Unpack it
+- Open terminal / powershell inside repository's directory
+- in terminal run: npm insall 
+- then start the server:
 
 ```bash
 npm run dev
