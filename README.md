@@ -1,4 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This app uses Prisma ORM and Sqlite as a database.
 
 ## Screenshots 
 ![todos](https://github.com/user-attachments/assets/01b51fec-5f92-44f4-bb61-8812baea45ab)
