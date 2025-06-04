@@ -16,6 +16,7 @@ export function TodoCheckbox({
   return (
     <input
       type="checkbox"
+      className="cursor-pointer"
       disabled={isPending}
       onChange={() => {
         startTransition(async () => {
@@ -42,7 +43,7 @@ export function TodoDeleteBtn({ id }: { id: string }) {
         });
       }}
     >
-      <TiDeleteOutline />
+      <TiDeleteOutline className="text-2xl hover:text-red-500" />
     </button>
   );
 }

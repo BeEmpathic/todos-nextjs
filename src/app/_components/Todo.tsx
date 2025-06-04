@@ -10,7 +10,7 @@ type TodoProps = {
 
 export default function Todo({ id, title, checked }: TodoProps) {
   return (
-    <li className="flex">
+    <li className="flex gap-1">
       <h3>{title}</h3>
       <TodoCheckbox id={id} checked={checked} />
       <TodoDeleteBtn id={id} />
