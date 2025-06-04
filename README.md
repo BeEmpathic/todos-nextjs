@@ -3,25 +3,23 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Screenshots 
 ![todos](https://github.com/user-attachments/assets/01b51fec-5f92-44f4-bb61-8812baea45ab)
 
-## Getting Started
-
-- To run the app on your computer you have to download the repository.
-- Unpack it
-- Open terminal / powershell inside repository's directory
-- in terminal run: npm insall 
-- then start the server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+
+
+## Running this on your machine
+- You have to download this repository
+-  unpack it
+-  run commend: "npm i" using terminal or powershell
+-  You need to feel prisma model with the one included in the repository 
+-  then generate the prisma client using commend: prisma migrate 
+- after that all probably you are done and you can start the server with commend: "npm run dev"
+
+
+
+model Todo {
+  id      String  @id @default(uuid())
+  title   String
+  checked Boolean @default(false)
+}
 
